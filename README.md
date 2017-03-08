@@ -10,14 +10,15 @@ License MIT
 * Include this library to your Arduino IDE.
 * Wiring GP2Y1010AU0F sensor to your Arduino or ESP-WROOM-02.
 
-    GP2Y1010AU0F blue wire   -> Arduino Vout(5V) via 150 ohm register and , Arduino GND via 220uF Capacitor  
+    From left wire,  
+    GP2Y1010AU0F blue wire   -> Arduino Vout(5V) via 150 ohm register, and Arduino GND via 220uF Capacitor  
     GP2Y1010AU0F green wire  -> Arduino GND  
     GP2Y1010AU0F white wire  -> Arduino Digital pin  
     GP2Y1010AU0F yellow wire -> Arduino GND  
     GP2Y1010AU0F black wire  -> Arduino Analog pin (if you use ESP-WROOM-02(esp8266), show below warning.)  
     GP2Y1010AU0F red wire    -> Arduino Vout(5V)  
 
-    warning: ESP-WROOM-02(esp8266) analog(TOUT) pin stand under 1V , you make 5V fall to 1V using a voltage divider.
+    warning: ESP-WROOM-02(esp8266) analog(TOUT) pin stand under 1V , you must make 5V fall to 1V using a voltage divider.
 
 * Read sample source code. It's very simple !
 
@@ -34,15 +35,19 @@ License MIT
   normal constractor. if you use this constractor, you must execute begin() function after this constractor execute.
 
 * GP2Y1010_DustSensor(int ledPin, int measurePin)  
-  setting pins, and initialize sensor.
+  setting pins, and initialize sensor.  
+    ledPin: set white wire digital pin no.  
+    measurePin: set black wire analog pin no.  
 
 ## public function
 
 * void begin(int ledPin, int measurePin)  
-  setting pins, and initialize sensor.
+  setting pins, and initialize sensor.  
+    ledPin: set white wire digital pin no.  
+    measurePin: set black wire analog pin no.  
   
 * float getDustDensity()  
-  get dust density (the unit is ug/m3.)
+  get dust density (the unit is ug/m3)
 
 
 # link

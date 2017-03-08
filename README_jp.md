@@ -1,5 +1,5 @@
 # GP2Y1010_DustSensor  
-Arduino IDE 用の SHARP GP2Y1010AU0F用 ほこりセンサ用のライブラリです。
+Arduino IDE 用の SHARP GP2Y1010AU0F ほこりセンサ用のライブラリです。  
 version 0.1
 
 # ライセンス  
@@ -8,9 +8,9 @@ License MIT
 # 使い方
 
 * このライブラリを Arduino IDE にインクルードしてください。
-* SHARP GP2Y1010AU0F を Arduino や ESP-WROOM-02 に接続してください。
+* SHARP GP2Y1010AU0F を Arduino や ESP-WROOM-02 に配線してください。
 
-    左から
+    左から  
     GP2Y1010AU0F 青 → 150Ω抵抗経由 Arduino Vout(5V), 220μFコンデンサ経由 Arduino GND  
     GP2Y1010AU0F 緑 → Arduino GND  
     GP2Y1010AU0F 白 → Arduino Digital pin  
@@ -53,6 +53,6 @@ License MIT
 * GP2Y1010AU0F Data sheet  
   http://www.sharp.co.jp/products/device/doc/opto/gp2y1010au_j.pdf
 
-* GP2Y1010AU0F 説明資料
+* GP2Y1010AU0F 説明資料  
   http://www.sharp.co.jp/products/device/doc/opto/gp2y1010au_appl_j.pdf 
 
