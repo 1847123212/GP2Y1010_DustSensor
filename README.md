@@ -1,6 +1,6 @@
 # GP2Y1010_DustSensor  
 Arduino IDE library for operating SHARP GP2Y1010AU0F dust sensor in ESP-WROOM-02(esp8266) or Arduino  
-version 0.1
+version 0.2
 
 # Credits and license  
 License MIT
@@ -49,6 +49,15 @@ License MIT
 * float getDustDensity()  
   get dust density (the unit is ug/m3)
 
+* float getDustDensityAvg()  
+  get dust density, Last 5 times average (the unit is ug/m3)
+
+* float getDustDensityAvg()  
+  get dust density, Last below "max" times average (the unit is ug/m3)
+
+* void setDustDensityHistoryMaxSize(int max)  
+  set average history max size.  
+  default value is 5.
 
 # link
 * GP2Y1010AU0F Data sheet  

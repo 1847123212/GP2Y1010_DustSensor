@@ -1,6 +1,6 @@
 # GP2Y1010_DustSensor  
 Arduino IDE 用の SHARP GP2Y1010AU0F ほこりセンサ用のライブラリです。  
-version 0.1
+version 0.2
 
 # ライセンス  
 License MIT
@@ -48,6 +48,14 @@ License MIT
   
 * float getDustDensity()  
   ほこりの濃度を取得します。単位は μg/m3 です。
+
+* float getDustDensityAvg()  
+  ほこりの濃度（最後の下記"max"件数の平均値）を取得します。単位は μg/m3 です。
+
+* void setDustDensityHistoryMaxSize(int max)  
+  平均値の最大数をセットします。  
+  デフォルト値は 5 です。
+
 
 # リンク
 * GP2Y1010AU0F Data sheet  
