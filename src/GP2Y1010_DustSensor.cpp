@@ -53,7 +53,6 @@ float GP2Y1010_DustSensor::getDustDensityAvg() {
 	getDustDensity();
 	float	avg = 0.;
 	for(auto itr = dustDensityHistory.begin(); itr != dustDensityHistory.end(); ++itr) {
-		Serial.println(*itr);
 		avg += *itr;
 	}
 	return avg / dustDensityHistory.size();
