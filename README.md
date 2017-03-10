@@ -50,9 +50,6 @@ License MIT
   get dust density (the unit is ug/m3)
 
 * float getDustDensityAvg()  
-  get dust density, Last 5 times average (the unit is ug/m3)
-
-* float getDustDensityAvg()  
   get dust density, Last below "max" times average (the unit is ug/m3)
 
 * void setDustDensityHistoryMaxSize(int max)  
