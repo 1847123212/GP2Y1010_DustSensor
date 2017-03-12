@@ -19,9 +19,9 @@ License MIT
     GP2Y1010AU0F red wire    -> Arduino Vout(5V or 3.3V)  
 
     warning:
-    - ESP-WROOM-02(esp8266) analog(TOUT) pin is supported under 1V , you must make 1V from 5V or 3.3V  using a voltage divider.  
+    - ESP-WROOM-02(esp8266) analog(TOUT) pin support under 1V , you must make 1V from 5V or 3.3V  using a voltage divider.  
     - you must blue/red wires(Vin) and black wire(Analog out) are wiring same voltage pins. (DO not wire 5V input and 3.3V outout.)  
-    - ESP32 ADC GPIOs are supported under 3.3V. so, it's easy to blue/red wires(Vin) wiring to 3.3V output, and black wire(analog out) wiring to ADC GPIO.
+    - ESP32 ADC GPIOs support under 3.3V. so, it's easy to blue/red wires(Vin) wiring to 3.3V output, and black wire(analog out) wiring to ADC GPIO.
 
 * Read sample source code. It's very simple !
 
