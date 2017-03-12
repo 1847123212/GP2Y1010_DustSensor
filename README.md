@@ -20,7 +20,7 @@ License MIT
 
     warning:
     - ESP-WROOM-02(esp8266) analog(TOUT) pin is supported under 1V , you must make 1V from 5V or 3.3V  using a voltage divider.  
-    - you must make blue/red wires(Vin) volts and black wire(Analog out) same voltage. (DO not wire 5V input and 3.3V outout.)  
+    - you must blue/red wires(Vin) and black wire(Analog out) are wiring same voltage pins. (DO not wire 5V input and 3.3V outout.)  
     - ESP32 ADC GPIOs are supported under 3.3V. so, it's easy to blue/red wires(Vin) wiring to 3.3V output, and black wire(analog out) wiring to ADC GPIO.
 
 * Read sample source code. It's very simple !
@@ -52,7 +52,7 @@ License MIT
 * void setADCbit(int bit)  
   set ADC bit digit.  
   ESP-WROOM-02(esp8266) is 10bit, ESP-WROOM-32(ESP32) is 12bit.  
-  default value is 10.
+  default value is 10(bit).
   
 * int  getADCbit();
   get established ADC bit digit.
@@ -61,8 +61,9 @@ License MIT
   set input voltage (5V or 3.3V).  
   if you set input voltage to 5V, Analog output voltage is 5V, too.  
   if you get analog voltage to 3,3V, you set input voltage to 5V, or 5V to 3.3V using a voltage divider.   
+  default value is 5(V).
   
-* float getInputVolts();
+* float getInputVolts()  
   get established input voltage value.
 
 * float getDustDensity()  
@@ -84,3 +85,7 @@ License MIT
   http://www.sharp-world.com/products/device-china/lineup/data/pdf/datasheet/gp2y1010au_appl_e.pdf (English)  
   http://www.sharp.co.jp/products/device/doc/opto/gp2y1010au_appl_j.pdf (Japanese)
 
+# history
+* ver. 0.1: closed version.
+* ver. 0.2: first release version.
+* ver. 0.3: support ESP-WROOM-32(ESP32), add set/getADCbit, set/getInputVolts functions.

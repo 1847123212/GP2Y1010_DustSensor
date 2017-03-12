@@ -21,7 +21,7 @@ License MIT
     ※注意事項  
       - ESP-WROOM-02 を使用する場合、analog TOUTピンは1Vまでしか対応しておりません。そのため、分圧回路にて5V or 3.3Vを1Vまで降圧させてください。  
       - 青/赤(Vin)の電圧と、黒(Analog out)の電圧は合わせてください。(5V入力、3.3V出力は不可)  
-      - ESP32を利用する場合、ADCは3.3Vまでの対応です。そのため、青/赤(Vin)は3,3Vに接続し、黒(analog out)はそのままADC対応のGPIOに接続する方法が楽です。  
+      - ESP32を利用する場合、ADCは3.3Vまでの対応です。そのため、青/赤(Vin)は3.3Vに接続し、黒(analog out)はそのままADC対応のGPIOに接続する方法が楽です。  
 
 * Arduino IDE からスケッチ例を参照してください。
 
@@ -51,7 +51,7 @@ License MIT
 * void setADCbit(int bit)  
   使用する機器のADCのビット数を設定します。  
   ESP-WROOM-02は10(bit)、ESP-WROOM-32は12(bit) です。  
-  デフォルト値は 10 です。
+  デフォルト値は 10 (bit)です。
   
 * int  getADCbit();
   設定してあるADCのビット数を取得します。  
@@ -59,7 +59,8 @@ License MIT
 * void setInputVolts(float volts)  
   入力電圧(5V or 3,3V)を設定します。  
   入力電圧を5Vに設定すると、Analog出力も5Vで出力されます。  
-  Analog出力を3.3Vにしたい場合は、入力電圧も3.3Vにするか、分圧回路で降圧してください。　　
+  Analog出力を3.3Vにしたい場合は、入力電圧も3.3Vにするか、分圧回路で降圧してください。  
+  デフォルト値は 5 (V)です。
   
 * float getInputVolts();
   設定してある入力電圧(5V or 3,3V)を取得します。
