@@ -54,7 +54,7 @@ License MIT
   ESP-WROOM-02(esp8266) is 10bit, ESP-WROOM-32(ESP32) is 12bit.  
   default value is 10(bit).
   
-* int  getADCbit();
+* int  getADCbit()  
   get established ADC bit digit.
   
 * void setInputVolts(float volts)  

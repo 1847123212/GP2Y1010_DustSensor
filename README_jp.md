@@ -15,7 +15,7 @@ License MIT
     GP2Y1010AU0F 緑 → Arduino GND  
     GP2Y1010AU0F 白 → Arduino Digital pin  
     GP2Y1010AU0F 黄 → Arduino GND  
-    GP2Y1010AU0F 黒 → Arduino Analog pin (ESP-WROOM-02の場合は TOUT) ※下記注意事項参照
+    GP2Y1010AU0F 黒 → Arduino Analog pin (ESP-WROOM-02の場合は TOUT) ※下記注意事項参照  
     GP2Y1010AU0F 赤 → Arduino Vout(5V or 3.3V)  
     
     ※注意事項  
