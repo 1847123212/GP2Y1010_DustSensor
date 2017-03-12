@@ -3,3 +3,7 @@ begin	KEYWORD2
 getDustDensity	KEYWORD2
 getDustDensityAvg	KEYWORD2
 setDustDensityHistoryMaxSize	KEYWORD2
+setADCbit	KEYWORD2
+getADCbit	KEYWORD2
+setInputVolts	KEYWORD2
+getInputVolts	KEYWORD2

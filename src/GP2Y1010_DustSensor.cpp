@@ -1,12 +1,13 @@
 /*
-  GP2Y1010_DustSensor.cpp - SHARP GP2Y1010AU0F Dust sensor library for ESP-WROOM-02 ( esp8266 ) or Arduino
-  version 0.2
+  GP2Y1010_DustSensor.cpp - SHARP GP2Y1010AU0F Dust sensor library for ESP-WROOM-02/32(esp8266/ESP32) or Arduino
+  version 0.3
   
   License MIT
 */
 
 #include "GP2Y1010_DustSensor.h"
 #include "Arduino.h"
+#include <math.h>
 
 // public
 
@@ -27,6 +28,23 @@ void GP2Y1010_DustSensor::begin(int ledPin, int measurePin){
 	pinMode(led_pin, OUTPUT);
 }
 
+void GP2Y1010_DustSensor::setADCbit(int bit){
+	analog_bit = bit;
+	analog_bit_num = pow(2., (double)analog_bit);
+}
+
+int GP2Y1010_DustSensor::getADCbit(){
+	return analog_bit;
+}
+
+void GP2Y1010_DustSensor::setInputVolts(float volts){
+	inputvolts = volts;
+}
+
+float GP2Y1010_DustSensor::getInputVolts(){
+	return inputvolts;
+}
+
 float GP2Y1010_DustSensor::getDustDensity() {
 
 	digitalWrite(led_pin, LOW);
@@ -39,7 +57,7 @@ float GP2Y1010_DustSensor::getDustDensity() {
 	delayMicroseconds(SLEEPTIME);
 
 	// culc dust density
-	float dust = (0.17 * (mesured * (5.0 / 1024.0)) - 0.1) * 1000.;
+	float dust = (0.17 * (mesured * (inputvolts / analog_bit_num)) - 0.1) * 1000.;
 	
 	dustDensityHistory.push_front(dust);
 	while( dustDensityHistory.size() > dustDensityHistoryMaxSize ) {
