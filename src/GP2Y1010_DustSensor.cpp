@@ -58,12 +58,13 @@ float GP2Y1010_DustSensor::getDustDensity() {
 
 	// culc dust density
 	float dust = (0.17 * (mesured * (inputvolts / analog_bit_num)) - 0.1) * 1000.;
+	if( dust<0 )	dust=0.;
 	
 	dustDensityHistory.push_front(dust);
 	while( dustDensityHistory.size() > dustDensityHistoryMaxSize ) {
 		dustDensityHistory.pop_back();
 	}
-	
+
 	return dustDensityHistory.front();
 }
 
