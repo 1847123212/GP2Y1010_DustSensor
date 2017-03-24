@@ -1,6 +1,6 @@
 # GP2Y1010_DustSensor  
 Arduino IDE library for operating SHARP GP2Y1010AU0F dust sensor in ESP-WROOM-02/32(esp8266/ESP32) or Arduino  
-version 0.3
+version 0.31
 
 # Credits and license  
 License MIT
@@ -28,7 +28,7 @@ License MIT
 # caution
 
 * this library is testing only ESP-WROOM-02/32(esp8266/ESP32) boards. if you can't execute this library on your arduino (or clone) boards, please contact me.
-
+* this library DO NOT support GP2Y101**4**AU0F dust sensor.
 
 # GP2Y1010_DustSensor library function
 
@@ -89,3 +89,4 @@ License MIT
 * ver. 0.1: closed version.
 * ver. 0.2: first release version.
 * ver. 0.3: support ESP-WROOM-32(ESP32), add set/getADCbit, set/getInputVolts functions.
+* ver. 0.31: write "do not support GP2Y1014AU0F", not minus value as getDustDensity().

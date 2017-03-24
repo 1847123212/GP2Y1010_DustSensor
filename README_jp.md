@@ -1,6 +1,6 @@
 # GP2Y1010_DustSensor  
 Arduino IDE 用の SHARP GP2Y1010AU0F ほこりセンサ用のライブラリです。  
-version 0.3
+version 0.31
 
 # ライセンス  
 License MIT
@@ -28,6 +28,7 @@ License MIT
 # 注意事項
 
 * ESP-WROOM-02/32 でのみテストをしています。他の Arduino(もしくは互換機)で動作しない場合はご連絡ください。
+* このライブラリは GP2Y101**4**AU0F には対応していません。
 
 # GP2Y1010_DustSensor ライブラリ説明
 
@@ -87,3 +88,4 @@ License MIT
 * ver. 0.1: 非公開
 * ver. 0.2: 初回公開
 * ver. 0.3: ESP-WROOM-32対応、ADCbit, InputVolts関係の関数を追加
+* ver. 0.31: GP2Y1014AU0F非対応の表示を追加、ほこり濃度がマイナスにならないように修正
