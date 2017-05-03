@@ -1,6 +1,6 @@
 /*
   GP2Y1010_DustSensor.cpp - SHARP GP2Y1010AU0F Dust sensor library for ESP-WROOM-02/32(esp8266/ESP32) or Arduino
-  version 0.3
+  version 0.4
   
   License MIT
 */
@@ -60,23 +60,5 @@ float GP2Y1010_DustSensor::getDustDensity() {
 	float dust = (0.17 * (mesured * (inputvolts / analog_bit_num)) - 0.1) * 1000.;
 	if( dust<0 )	dust=0.;
 	
-	dustDensityHistory.push_front(dust);
-	while( dustDensityHistory.size() > dustDensityHistoryMaxSize ) {
-		dustDensityHistory.pop_back();
-	}
-
-	return dustDensityHistory.front();
-}
-
-float GP2Y1010_DustSensor::getDustDensityAvg() {
-	getDustDensity();
-	float	avg = 0.;
-	for(auto itr = dustDensityHistory.begin(); itr != dustDensityHistory.end(); ++itr) {
-		avg += *itr;
-	}
-	return avg / dustDensityHistory.size();
-}
-
-void GP2Y1010_DustSensor::setDustDensityHistoryMaxSize(int max) {
-	dustDensityHistoryMaxSize = max;
+	return dust;
 }

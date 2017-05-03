@@ -1,6 +1,6 @@
 # GP2Y1010_DustSensor  
 Arduino IDE 用の SHARP GP2Y1010AU0F ほこりセンサ用のライブラリです。  
-version 0.31
+version 0.4
 
 # ライセンス  
 License MIT
@@ -27,7 +27,6 @@ License MIT
 
 # 注意事項
 
-* ESP-WROOM-02/32 でのみテストをしています。他の Arduino(もしくは互換機)で動作しない場合はご連絡ください。
 * このライブラリは GP2Y101**4**AU0F には対応していません。
 
 # GP2Y1010_DustSensor ライブラリ説明
@@ -51,7 +50,7 @@ License MIT
 
 * void setADCbit(int bit)  
   使用する機器のADCのビット数を設定します。  
-  ESP-WROOM-02は10(bit)、ESP-WROOM-32は12(bit) です。  
+  ESP-WROOM-02/Arduino(AVR)は10(bit)、ESP-WROOM-32は12(bit) です。  
   デフォルト値は 10 (bit)です。
   
 * int  getADCbit();
@@ -69,13 +68,6 @@ License MIT
 * float getDustDensity()  
   ほこりの濃度を取得します。単位は μg/m3 です。
 
-* float getDustDensityAvg()  
-  ほこりの濃度（最後の下記"max"件数の平均値）を取得します。単位は μg/m3 です。
-
-* void setDustDensityHistoryMaxSize(int max)  
-  平均値の最大数をセットします。  
-  デフォルト値は 5 です。
-
 
 # リンク
 * GP2Y1010AU0F Data sheet  
@@ -89,3 +81,4 @@ License MIT
 * ver. 0.2: 初回公開
 * ver. 0.3: ESP-WROOM-32対応、ADCbit, InputVolts関係の関数を追加
 * ver. 0.31: GP2Y1014AU0F非対応の表示を追加、ほこり濃度がマイナスにならないように修正
+* ver. 0.4: Arduino AVR 環境で動作しなかったバグを修正。あわせて getDustDensityAvg() と setDustDensityHistoryMaxSize() 関数を削除。

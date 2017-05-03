@@ -1,6 +1,6 @@
 /*
   GP2Y1010_DustSensor.cpp - SHARP GP2Y1010AU0F Dust sensor library for ESP-WROOM-02/32(esp8266/ESP32) or Arduino
-  version 0.3
+  version 0.4
   
   License MIT
 */
@@ -10,7 +10,6 @@
 
 #include "Arduino.h"
 #include <math.h>
-#include <list>
 
 class GP2Y1010_DustSensor
 {
@@ -27,18 +26,11 @@ public:
 	float getInputVolts();
 	
 	float getDustDensity();
-	float getDustDensityAvg();
-
-	void setDustDensityHistoryMaxSize(int max);
 
 protected:
 
 private:
-
-	int dustDensityHistoryMaxSize = 5;
-
 	int led_pin = 2 , measure_pin = A0;
-	std::list<float> dustDensityHistory;
 
 	static const int SAMPLINGTIME = 280;
 	static const int DELTATIME = 40;
