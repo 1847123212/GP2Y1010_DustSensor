@@ -50,14 +50,14 @@ float GP2Y1010_DustSensor::getDustDensity() {
 	digitalWrite(led_pin, LOW);
 	delayMicroseconds(SAMPLINGTIME);
 
-	float mesured = analogRead(measure_pin);	//read analog pin / Dust value
+	float measured = analogRead(measure_pin);	//read analog pin / Dust value
 	delayMicroseconds(DELTATIME);
 
 	digitalWrite(led_pin, HIGH);
 	delayMicroseconds(SLEEPTIME);
 
 	// culc dust density
-	float dust = (0.17 * (mesured * (inputvolts / analog_bit_num)) - 0.1) * 1000.;
+	float dust = (0.17 * (measured * (inputvolts / analog_bit_num)) - 0.1) * 1000.;
 	if( dust<0 )	dust=0.;
 	
 	return dust;
